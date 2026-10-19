@@ -55,21 +55,32 @@ function getWeatherCondition(weatherCode) {
   return { emoji: "⛅", label: "Current conditions" };
 }
 
-// TODO: swap these placeholder links for real recipe pages once they exist.
-const RAIN_SNOW_CODES = [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99];
+const THUNDER_CODES = [95, 96, 99];
+const SNOW_CODES = [71, 73, 75, 77, 85, 86];
+const RAIN_CODES = [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82];
+const FOG_CODES = [45, 48];
 
 function getRecipeSuggestion(temperatureF, weatherCode) {
-  if (RAIN_SNOW_CODES.includes(weatherCode)) {
-    return { text: "Rainy day calls for a loaf of bread and something simmering.", href: "#kitchen" };
+  if (THUNDER_CODES.includes(weatherCode)) {
+    return { text: "Thunder rolling? Stay in with a bowl of carrot risotto.", href: "meals.html" };
+  }
+  if (SNOW_CODES.includes(weatherCode)) {
+    return { text: "Snow day calls for an oven marathon — brioche sticky buns or a pain suisse.", href: "pastries.html" };
+  }
+  if (RAIN_CODES.includes(weatherCode)) {
+    return { text: "Rainy out there — perfect for a slow-simmered pork katsu curry.", href: "meals.html" };
+  }
+  if (FOG_CODES.includes(weatherCode)) {
+    return { text: "Foggy and moody — comfort food weather. Parmesan-crusted chicken over miso mascarpone pasta hits the spot.", href: "meals.html" };
   }
   if (temperatureF <= 45) {
-    return { text: "Cold out there — perfect weather for slow-baked pastries.", href: "#kitchen" };
+    return { text: "Cold out there — good weather for a slow afternoon of baking, like a chocolate stout cake.", href: "pastries.html" };
   }
   if (temperatureF >= 85) {
-    return { text: "Too hot to bake — lean into a no-cook, fridge-chilled dessert.", href: "#kitchen" };
+    return { text: "Too hot for the oven — the vacherin's your move: chilled meringue, berries, and cr\u00e8me anglaise.", href: "pastries.html" };
   }
   if (temperatureF >= 60 && temperatureF < 85) {
-    return { text: "Mild and easy — it's a pizza night.", href: "#kitchen" };
+    return { text: "Mild and easy — it's a pizza night.", href: "pizza.html" };
   }
   return { text: "Good weather for whatever sounds good tonight.", href: "#kitchen" };
 }
