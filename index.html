@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Dan is a service designer building thoughtful digital experiences that connect people and products."
+      content="Mise & Momentum — a home cook and baker's kitchen journal of pastries, pizza, and everyday meals made with precision and love."
     />
-    <title>Dan — Service Designer</title>
+    <title>Mise & Momentum — Home Cooking & Baking</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="container">
       <header>
         <nav>
-          <a class="brand" href="#home">Dan</a>
+          <a class="brand" href="#home">Mise &amp; Momentum</a>
           <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#work">Work</a>
+            <a href="#kitchen">Kitchen</a>
+            <a href="#weather">Today's Craving</a>
             <a href="#contact">Contact</a>
           </div>
         </nav>
@@ -26,22 +27,24 @@
       <main>
         <section class="hero" id="home">
           <div>
-            <p>Service design for meaningful digital products</p>
-            <h1>Hi, I’m Dan. I design services that make complex experiences feel clear and personal.</h1>
+            <p class="eyebrow">A kitchen journal</p>
+            <h1>Precision in the dough, joy at the table.</h1>
             <p>
-              I help teams shape the customer journey, align products with business strategy, and craft experiences people remember.
+              I'm a home cook and baker who traded flight paths and design systems for flour and fire. Every
+              pastry, pizza, and weeknight meal here is an effort of love for the people I feed.
             </p>
-            <a class="button-primary" href="#contact">Let’s connect</a>
+            <a class="button-primary" href="#kitchen">See what's baking</a>
           </div>
         </section>
 
-        <section class="section weather-section" aria-labelledby="weather-heading">
+        <section class="section weather-section" id="weather" aria-labelledby="weather-heading">
           <article class="card weather-card">
             <div class="weather-icon" id="weather-icon" aria-hidden="true">⛅</div>
             <div class="weather-copy">
-              <p class="weather-label" id="weather-heading">Local weather</p>
+              <p class="weather-label" id="weather-heading">Today's craving, based on your weather</p>
               <p class="weather-temperature" id="weather-temperature">--°F</p>
               <p class="weather-status" id="weather-status" aria-live="polite">Finding your forecast...</p>
+              <p class="weather-suggestion" id="weather-suggestion"></p>
             </div>
           </article>
         </section>
@@ -49,35 +52,41 @@
         <section class="section" id="about">
           <h2>About me</h2>
           <p>
-            I am a service designer with a focus on human-centered systems, collaborative research, and strategic product design.
-            I enjoy translating insight into action, simplifying workflows, and designing service experiences that feel intuitive.
+            I got into baking during COVID, mostly out of curiosity and a need for something to do with my hands.
+            Pizza came later — about two years of dialing in dough, hydration, and oven spring. I'd call my style
+            precise with a little experimentation: I like knowing the rules well enough to bend them. Overall,
+            I just want to make people smile with the food I make. It's an effort of love for the people around me.
           </p>
         </section>
 
-        <section class="section" id="work">
-          <div class="grid grid-2">
+        <section class="section" id="kitchen">
+          <h2>In the kitchen</h2>
+          <div class="grid grid-3">
             <article class="card">
-              <h3>Service strategy</h3>
+              <div class="photo-placeholder" role="img" aria-label="Photo of pastries and desserts coming soon">
+                <span>Photo coming soon</span>
+              </div>
+              <h3>Pastries &amp; desserts</h3>
               <p>
-                Defining how teams deliver consistent experiences across touchpoints, from onboarding to support.
+                Laminated doughs, custards, and sweet experiments — the slower, more meditative side of the kitchen.
               </p>
             </article>
             <article class="card">
-              <h3>Research & insight</h3>
+              <div class="photo-placeholder" role="img" aria-label="Photo of pizza coming soon">
+                <span>Photo coming soon</span>
+              </div>
+              <h3>Pizza</h3>
               <p>
-                Translating user needs into practical service improvements and clearer product direction.
+                Two years of chasing the perfect crust — fermentation schedules, hydration ratios, and a very hot oven.
               </p>
             </article>
             <article class="card">
-              <h3>Journey mapping</h3>
+              <div class="photo-placeholder" role="img" aria-label="Photo of everyday meals coming soon">
+                <span>Photo coming soon</span>
+              </div>
+              <h3>Everyday meals</h3>
               <p>
-                Mapping customer moments and internal processes to identify opportunities for better service outcomes.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Collaboration</h3>
-              <p>
-                Working with product, design, and operations teams to build aligned services that support business goals.
+                Weeknight cooking for the people around me — simple, seasonal, and made to be shared.
               </p>
             </article>
           </div>
@@ -86,17 +95,17 @@
         <section class="section" id="contact">
           <h2>Contact</h2>
           <p>
-            Interested in building service experiences together? Reach out and let’s talk about your next project.
+            Got a recipe request, a question about dough, or just want to say hi? Reach out any time.
           </p>
           <p>
-            Email: <a href="mailto:hello@dan.com">hello@dan.com</a>
+            Email: <a href="mailto:hello@miseandmomentum.com">hello@miseandmomentum.com</a>
           </p>
         </section>
       </main>
     </div>
 
     <footer>
-      <p>Designed by Dan — Service Designer</p>
+      <p>Mise &amp; Momentum — baked with love</p>
     </footer>
     <script src="app.js"></script>
   </body>

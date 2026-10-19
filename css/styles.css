@@ -1,9 +1,14 @@
-/* Personal website styles */
+/* Mise & Momentum — Scandinavian-inspired kitchen journal styles */
 :root {
   color-scheme: light;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f3f4f6;
-  color: #111827;
+  background: #faf7f2;
+  color: #2c2a27;
+  --accent: #c1512f;
+  --accent-soft: #f3e3da;
+  --mustard: #e4b73f;
+  --muted: #6f6a63;
+  --border: #e8e2d8;
 }
 
 * {
@@ -22,12 +27,12 @@ img {
 }
 
 .container {
-  width: min(1100px, 100% - 2rem);
+  width: min(1100px, 100% - 2.5rem);
   margin: 0 auto;
 }
 
 header {
-  padding: 1.25rem 0;
+  padding: 1.75rem 0;
 }
 
 nav {
@@ -39,19 +44,25 @@ nav {
 
 .brand {
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+  color: #2c2a27;
+  text-decoration: none;
 }
 
 .nav-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.75rem;
   flex-wrap: wrap;
 }
 
 .nav-links a {
-  color: #374151;
+  color: var(--muted);
   text-decoration: none;
   font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
 }
 
 main {
@@ -60,78 +71,112 @@ main {
 
 .hero {
   display: grid;
-  gap: 2rem;
-  padding: 3rem 0;
+  gap: 1.25rem;
+  padding: 4rem 0 3rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
   margin: 0;
-  line-height: 1.05;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .hero p {
-  max-width: 50rem;
-  color: #4b5563;
+  max-width: 42rem;
+  color: var(--muted);
 }
 
 .button-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #111827;
-  color: #ffffff;
+  background: var(--accent);
+  color: #fff8f3;
   border: none;
   border-radius: 9999px;
-  padding: 0.95rem 1.75rem;
+  padding: 0.95rem 1.9rem;
   text-decoration: none;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.button-primary:hover {
+  background: #a8431f;
 }
 
 .section {
-  padding: 3rem 0;
-  border-top: 1px solid #e5e7eb;
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--border);
 }
 
 .section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.85rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
 .section p {
-  color: #4b5563;
+  color: var(--muted);
 }
 
 .grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 .grid-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .card {
   background: #ffffff;
+  border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 1.75rem;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
 
 .card h3 {
   margin-top: 0;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .card p {
   margin: 0;
-  color: #4b5563;
+  color: var(--muted);
+}
+
+.photo-placeholder {
+  display: grid;
+  place-items: center;
+  height: 10rem;
+  margin: -1.75rem -1.75rem 1.25rem;
+  border-radius: 1rem 1rem 0 0;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 footer {
-  padding: 2rem 0 3rem;
-  color: #6b7280;
+  padding: 2.5rem 0 3rem;
+  color: var(--muted);
   text-align: center;
+  border-top: 1px solid var(--border);
 }
 
 .weather-section {
@@ -142,8 +187,9 @@ footer {
 .weather-card {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  max-width: 32rem;
+  gap: 1.5rem;
+  max-width: 34rem;
+  background: #fff;
 }
 
 .weather-icon {
@@ -153,7 +199,7 @@ footer {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: #fef3c7;
+  background: var(--accent-soft);
   font-size: 2rem;
   line-height: 1;
 }
@@ -165,24 +211,47 @@ footer {
 .weather-label,
 .weather-status {
   margin: 0;
-  color: #6b7280;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
 .weather-temperature {
   margin: 0.1rem 0;
-  color: #111827;
+  color: #2c2a27;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
 }
 
+.weather-suggestion {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+.weather-suggestion a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--mustard);
+}
+
+.weather-suggestion a:hover {
+  color: #a8431f;
+}
+
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
-    padding: 2rem 0;
+    padding: 2.5rem 0 2rem;
   }
 
-  .grid-2 {
+  .grid-2,
+  .grid-3 {
     grid-template-columns: 1fr;
   }
 
