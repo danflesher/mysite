@@ -4,8 +4,9 @@
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #faf7f2;
   color: #2c2a27;
-  --accent: #c1512f;
-  --accent-soft: #f3e3da;
+  --accent: #2f4a3e;
+  --accent-soft: #e2e9e4;
+  --accent-dark: #22362c;
   --mustard: #e4b73f;
   --muted: #6f6a63;
   --border: #e8e2d8;
@@ -156,7 +157,7 @@ main {
 }
 
 .button-primary:hover {
-  background: #a8431f;
+  background: var(--accent-dark);
 }
 
 .section {
@@ -322,7 +323,7 @@ footer {
 }
 
 .weather-suggestion a:hover {
-  color: #a8431f;
+  color: var(--accent-dark);
 }
 
 @media (max-width: 900px) {
