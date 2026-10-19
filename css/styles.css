@@ -409,3 +409,88 @@ footer {
     padding: 1.25rem;
   }
 }
+
+.preheat {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  background: #faf7f2;
+  cursor: pointer;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preheat.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.oven-dial {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, var(--accent-soft) 55%, #ffffff 100%);
+  border: 3px solid var(--accent);
+  box-shadow: 0 12px 30px rgba(47, 74, 62, 0.15);
+}
+
+.oven-dial::before {
+  content: "";
+  position: absolute;
+  inset: 0.4rem;
+  border-radius: 50%;
+  background: repeating-conic-gradient(var(--border) 0deg 2deg, transparent 2deg 18deg);
+}
+
+.oven-dial-needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 3.5rem;
+  background: var(--mustard);
+  border-radius: 2px;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(-130deg);
+  animation: dial-turn 1.8s ease forwards;
+}
+
+.oven-dial-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.preheat-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+@keyframes dial-turn {
+  from {
+    transform: translate(-50%, -100%) rotate(-130deg);
+  }
+  to {
+    transform: translate(-50%, -100%) rotate(130deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oven-dial-needle {
+    animation: none;
+    transform: translate(-50%, -100%) rotate(130deg);
+  }
+}

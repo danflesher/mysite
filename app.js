@@ -3,6 +3,46 @@ const weatherTemperature = document.getElementById("weather-temperature");
 const weatherStatus = document.getElementById("weather-status");
 const weatherSuggestion = document.getElementById("weather-suggestion");
 
+const PREHEAT_SESSION_KEY = "miseAndMomentumPreheated";
+const PREHEAT_DURATION_MS = 1800;
+
+function runPreheatIntro() {
+  const preheat = document.getElementById("preheat");
+  if (!preheat) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (sessionStorage.getItem(PREHEAT_SESSION_KEY) || reduceMotion) {
+    preheat.remove();
+    return;
+  }
+  sessionStorage.setItem(PREHEAT_SESSION_KEY, "true");
+
+  const tempEl = document.getElementById("preheat-temp");
+  const startTemp = 170;
+  const endTemp = 350;
+  const startTime = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - startTime) / PREHEAT_DURATION_MS, 1);
+    tempEl.textContent = Math.round(startTemp + (endTemp - startTemp) * progress);
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  let dismissed = false;
+  function dismiss() {
+    if (dismissed) return;
+    dismissed = true;
+    preheat.classList.add("is-hidden");
+    setTimeout(() => preheat.remove(), 500);
+  }
+
+  preheat.addEventListener("click", dismiss);
+  setTimeout(dismiss, PREHEAT_DURATION_MS + 400);
+}
+
+runPreheatIntro();
+
 function getWeatherCondition(weatherCode) {
   if (weatherCode === 0) return { emoji: "☀️", label: "Clear skies" };
   if ([1, 2].includes(weatherCode)) return { emoji: "🌤️", label: "Partly cloudy" };
