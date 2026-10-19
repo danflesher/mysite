@@ -17,7 +17,14 @@
           <a class="brand" href="#home">Mise &amp; Momentum</a>
           <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#kitchen">Kitchen</a>
+            <details class="nav-dropdown">
+              <summary>Kitchen</summary>
+              <div class="nav-dropdown-menu">
+                <a href="pastries.html">Pastries &amp; Desserts</a>
+                <a href="pizza.html">Pizza</a>
+                <a href="meals.html">Everyday Meals</a>
+              </div>
+            </details>
             <a href="#weather">Today's Craving</a>
             <a href="#contact">Contact</a>
           </div>
@@ -62,33 +69,30 @@
         <section class="section" id="kitchen">
           <h2>In the kitchen</h2>
           <div class="grid grid-3">
-            <article class="card">
-              <div class="photo-placeholder" role="img" aria-label="Photo of pastries and desserts coming soon">
-                <span>Photo coming soon</span>
-              </div>
+            <a class="card" href="pastries.html">
+              <img class="card-photo" src="images/Pastries1.jpg" alt="Pastries and desserts" />
               <h3>Pastries &amp; desserts</h3>
               <p>
                 Laminated doughs, custards, and sweet experiments — the slower, more meditative side of the kitchen.
               </p>
-            </article>
-            <article class="card">
-              <div class="photo-placeholder" role="img" aria-label="Photo of pizza coming soon">
-                <span>Photo coming soon</span>
-              </div>
+              <span class="card-cta">View gallery &rarr;</span>
+            </a>
+            <a class="card" href="pizza.html">
+              <img class="card-photo" src="images/Pizza1.JPEG" alt="Pizza" />
               <h3>Pizza</h3>
               <p>
                 Two years of chasing the perfect crust — fermentation schedules, hydration ratios, and a very hot oven.
               </p>
-            </article>
-            <article class="card">
-              <div class="photo-placeholder" role="img" aria-label="Photo of everyday meals coming soon">
-                <span>Photo coming soon</span>
-              </div>
+              <span class="card-cta">View gallery &rarr;</span>
+            </a>
+            <a class="card" href="meals.html">
+              <img class="card-photo" src="images/Meal1.jpg" alt="Everyday meals" />
               <h3>Everyday meals</h3>
               <p>
                 Weeknight cooking for the people around me — simple, seasonal, and made to be shared.
               </p>
-            </article>
+              <span class="card-cta">View gallery &rarr;</span>
+            </a>
           </div>
         </section>
 
